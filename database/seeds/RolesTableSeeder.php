@@ -15,7 +15,7 @@ class RolesTableSeeder extends Seeder
     {
         //
     	Role::insert(array(
-            ['role' => 'Admin'],
-            ['role' => 'Guest']));
+            ['name' => 'Admin'],
+            ['name' => 'Guest']));
     }
 }
