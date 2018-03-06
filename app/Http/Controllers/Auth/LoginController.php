@@ -60,10 +60,10 @@ class LoginController extends Controller
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             if(Auth::user()->role()->first()->name=="Admin"){
-                return redirect()->intended('/admin');
+                return redirect()->intended('/admin/dashboard');
             }
             else if(Auth::user()->role()->first()->name=="Guest"){
-                return redirect()->intended('/guest');
+                return redirect()->intended('/guest/dashboard');
             }
         }
         return Redirect::to('/');

@@ -16,15 +16,13 @@ Route::get('/', function ()
     return redirect()->to('/login');
 });
 Auth::routes();
-Route::get('/admin','AdminController@index');
-Route::get('/guest','GuestController@index');
 
-Route::group(['middleware' => 'AdminRoutes', 'prefix' => 'admin'], function()
+Route::group(['middleware' => 'adminRoutes', 'prefix' => 'admin'], function()
 {
-	Route::get('/home','AdminController@dashboard');
+	Route::get('/dashboard','AdminController@dashboard');
 });
 
-Route::group(['middleware' => 'GuestRoutes', 'prefix' => 'guest'], function()
+Route::group(['middleware' => 'guestRoutes', 'prefix' => 'guest'], function()
 {
-	Route::get('/home','GuestController@dashboard');
+	Route::get('/dashboard','GuestController@dashboard');
 });

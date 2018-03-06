@@ -20,11 +20,11 @@ class RedirectIfAuthenticated
         
         if (Auth::guard($guard)->check()) {
             if(Auth::user()->role()->first()->name=="Admin")
-                return redirect('/admin');
+                return redirect('/admin/dashboard');
             if(Auth::user()->role()->first()->name=="Guest")
-                return redirect('/guest');
+                return redirect('/guest/dashboard');
         }
-        
+
         return $next($request);
     }
 }

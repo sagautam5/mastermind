@@ -15,7 +15,9 @@ class GuestController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
-    	return redirect()->to('/guest/home');
+    public function dashboard(){
+    	echo "guest";
     }
+
+
 }

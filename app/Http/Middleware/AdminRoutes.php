@@ -18,6 +18,9 @@ class AdminRoutes
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(Auth::user()->role()->first()->name=="Admin"){
+            return $next($request);
+        }
+        return redirect()->back()->with('error','You don\'t have access to this page');
     }
 }

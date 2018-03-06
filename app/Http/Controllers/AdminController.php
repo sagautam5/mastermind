@@ -14,7 +14,7 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
-    	return redirect()->to('/admin/home');
+    public function dashboard(){
+    	echo "admin";
     }
 }

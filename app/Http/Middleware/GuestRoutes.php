@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 
+use Illuminate\Support\Facades\Auth;
+
+
 class GuestRoutes
 {
     /**
@@ -15,6 +18,9 @@ class GuestRoutes
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(Auth::user()->role()->first()->name=="Guest"){
+            return $next($request);
+        }
+        return redirect()->back()->with('error','You don\'t have access to this page');
     }
 }
