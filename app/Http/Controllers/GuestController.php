@@ -16,7 +16,7 @@ class GuestController extends Controller
     }
 
     public function dashboard(){
-    	echo "guest";
+    	return view('guest.dashboard');
     }
 
 
