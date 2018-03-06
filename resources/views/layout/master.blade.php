@@ -10,9 +10,9 @@
 <title>@yield('title', 'Master Mind - Guess The Secret Code')</title>
 
 @section('assets')
-    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 @show()
 </head>
 <body>
@@ -24,6 +24,10 @@
 @show()
 
 @section('imports')
+    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/moment.min.js')}}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script>
         var base_url = '{{ url('') }}';
         window.Laravel = <?php echo json_encode([
