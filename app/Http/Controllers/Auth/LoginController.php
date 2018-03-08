@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
 
 
 class LoginController extends Controller
@@ -56,7 +57,7 @@ class LoginController extends Controller
      *
      * @return Response
      */
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             if(Auth::user()->role()->first()->name=="Admin"){
@@ -66,7 +67,7 @@ class LoginController extends Controller
                 return redirect()->intended('/guest/dashboard');
             }
         }
-        return Redirect::to('/');
+        return redirect()->to('/login')->with('login-failed','Incorrect email or password');
     }
 
     public function logout() {
