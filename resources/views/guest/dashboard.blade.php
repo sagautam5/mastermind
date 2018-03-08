@@ -14,7 +14,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="col-md-12">
-				<input class="form-control">
+				<h3>This is Guest Dashboard.</h3>
 			</div>			
 		</div>
 	</div>

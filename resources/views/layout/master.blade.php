@@ -12,6 +12,7 @@
 @section('assets')
     <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 @show()
 </head>
@@ -24,6 +25,7 @@
 @show()
 
 @section('imports')
+
     <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/moment.min.js')}}"></script>

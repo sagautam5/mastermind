@@ -31,9 +31,20 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+Route::get('/about','DashboardController@getAbout');
+Route::get('/rules','DashboardController@getRules');
+
 Route::group(['middleware' => 'adminRoutes', 'prefix' => 'admin'], function()
 {
 	Route::get('/dashboard','AdminController@dashboard');
+
+});
+
+Route::group(['middleware' => 'adminRoutes'], function(){
+
+	Route::get('/stats','AdminController@getStats');
+	Route::get('/users','AdminController@getUsers');
+	
 });
 
 Route::group(['middleware' => 'guestRoutes', 'prefix' => 'guest'], function()
